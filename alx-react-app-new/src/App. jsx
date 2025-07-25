@@ -6,8 +6,8 @@ function App() {
   return (
     <div>
       <Header />
-      <UserProfile name="Alice" age={28} bio="Loves tech and hiking." />
-      <UserProfile name="Bob" age={34} bio="Enjoys reading and traveling." />
+      <UserProfile name="Nicholas "age={21} bio="Loves football and learning." />
+      <UserProfile name="Morgan" age={25} bio="Enjoys driving and traveling." />
     </div>
   );
 }
