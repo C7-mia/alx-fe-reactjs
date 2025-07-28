@@ -1,10 +1,16 @@
 import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, useParams } from 'react-router-dom';
 
 import RecipeList from './components/RecipeList';
 import AddRecipeForm from './components/AddRecipeForm';
 import SearchBar from './components/SearchBar';
-import RecipeDetails from './components/RecipeDetails'; // Optional if implemented
+import RecipeDetails from './components/RecipeDetails'; // Optional: make sure this file exists
+
+// Wrapper for dynamic route (used only if RecipeDetails.jsx exists)
+const RecipeDetailsWrapper = () => {
+  const { id } = useParams();
+  return <RecipeDetails recipeId={parseInt(id)} />;
+};
 
 const App = () => {
   return (
@@ -30,13 +36,6 @@ const App = () => {
       </div>
     </Router>
   );
-};
-
-// Optional: Wrapper for route with dynamic ID (if RecipeDetails is implemented)
-import { useParams } from 'react-router-dom';
-const RecipeDetailsWrapper = () => {
-  const { id } = useParams();
-  return <RecipeDetails recipeId={parseInt(id)} />;
 };
 
 export default App;
