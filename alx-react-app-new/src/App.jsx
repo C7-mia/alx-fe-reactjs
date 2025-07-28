@@ -1,7 +1,7 @@
-import React from 'react';
+import React, { useState } from 'react';
 import ProfilePage from './ProfilePage';
-import Counter from './Counter'; // assuming it's now a separate file
 import UserContext from './UserContext';
+import Counter from './components/Counter'; // assume you moved it to /components
 
 function App() {
   const userData = { name: "Jane Doe", email: "jane.doe@example.com" };
