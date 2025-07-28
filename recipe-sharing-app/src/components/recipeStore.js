@@ -6,9 +6,16 @@ const useRecipeStore = create((set, get) => ({
   filteredRecipes: [],
 
   // Actions
+  setRecipes: (newRecipes) => {
+    set({
+      recipes: newRecipes,
+      filteredRecipes: get().filterByTerm(newRecipes, get().searchTerm),
+    });
+  },
+
   setSearchTerm: (term) => {
     set({ searchTerm: term });
-    get().filterRecipes(); // Automatically filter on search term change
+    get().filterRecipes();
   },
 
   addRecipe: (recipe) => {
