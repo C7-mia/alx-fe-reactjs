@@ -1,7 +1,7 @@
 import React from 'react';
 import { useRecipeStore } from './recipeStore';
 
-export function FavoritesList() {
+export default function FavoritesList() {
   const favorites = useRecipeStore(state =>
     state.favorites
       .map(id => state.recipes.find(r => r.id === id))
