@@ -1,12 +1,8 @@
-import React from 'react';
-import UserContext from './UserContext';
 import ProfilePage from './ProfilePage';
+import UserContext from './UserContext';
 
 function App() {
-  const userData = {
-    name: 'John Doe',
-    email: 'john.doe@example.com'
-  };
+  const userData = { name: "Jane Doe", email: "jane.doe@example.com" };
 
   return (
     <UserContext.Provider value={userData}>
