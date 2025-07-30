@@ -1,4 +1,4 @@
-import create from 'zustand';
+toimport create from 'zustand';
 
 export const useRecipeStore = create(set => ({
   recipes: [],
@@ -35,7 +35,7 @@ export const useRecipeStore = create(set => ({
     set(state => ({
       favorites: state.favorites.filter(favId => favId !== id),
     })),
-
+setRecipes 
   generateRecommendations: () =>
     set(state => {
       const recommended = state.recipes.filter(
