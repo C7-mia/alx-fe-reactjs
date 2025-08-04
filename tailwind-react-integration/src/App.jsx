@@ -1,11 +1,12 @@
 import './App.css'
+import UserProfile from './components/UserProfile';
 
 function App() {
   return (
-    <div className="text-center text-blue-500 text-3xl font-bold mt-10">
-      Tailwind CSS is working!
+    <div>
+      <UserProfile />
     </div>
-  )
+  );
 }
 
-export default App
+export default App;
