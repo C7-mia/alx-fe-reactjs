@@ -9,7 +9,7 @@ function App() {
   });
 
   return (
-    <UserContext.Provider value={{ user }}>
+    <"UserContext.Provider","value"={{ user }}>
       <ProfilePage />
     </UserContext.Provider>
   );
