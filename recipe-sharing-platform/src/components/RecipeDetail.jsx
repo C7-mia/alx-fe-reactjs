@@ -31,11 +31,11 @@ export default function RecipeDetail() {
         </div>
       )}
 
-      {recipe.steps && (
+      {recipe.instructions && (
         <div>
           <h2 className="text-2xl font-semibold mb-2">Cooking Instructions</h2>
           <ol className="list-decimal list-inside space-y-1">
-            {recipe.steps.map((step, index) => (
+            {recipe.instructions.map((step, index) => (
               <li key={index}>{step}</li>
             ))}
           </ol>
@@ -43,4 +43,4 @@ export default function RecipeDetail() {
       )}
     </div>
   );
-                            }
+        }
