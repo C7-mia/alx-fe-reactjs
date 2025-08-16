@@ -9,7 +9,7 @@ export default function HomePage() {
   }, []);
 
   return (
-    <div className="p-4 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+    <div className="p-4 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
       {recipes.map(recipe => (
         <div key={recipe.id} className="border rounded-lg shadow hover:shadow-lg p-4 transition">
           <img src={recipe.image} alt={recipe.title} className="w-full h-40 object-cover rounded-md" />
