@@ -30,7 +30,7 @@ function AddRecipeForm() {
   };
 
   return (
-    <div className="max-w-lg mx-auto bg-white p-6 rounded-2xl shadow-lg mt-10">
+    <div className="max-w-lg mx-auto bg-white p-6 md:p-8 rounded-2xl shadow-lg mt-10">
       <h2 className="text-2xl font-bold mb-4">Add a New Recipe</h2>
       <form onSubmit={handleSubmit} className="space-y-4">
         <div>
@@ -39,7 +39,7 @@ function AddRecipeForm() {
             type="text"
             value={title}
             onChange={(e) => setTitle(e.target.value)}
-            className="w-full border rounded p-2 mt-1"
+            className="w-full border rounded p-2 mt-1 md:p-3"
           />
           {errors.title && (
             <p className="text-red-500 text-sm">{errors.title}</p>
@@ -51,7 +51,7 @@ function AddRecipeForm() {
           <textarea
             value={ingredients}
             onChange={(e) => setIngredients(e.target.value)}
-            className="w-full border rounded p-2 mt-1"
+            className="w-full border rounded p-2 mt-1 md:p-3"
           ></textarea>
           {errors.ingredients && (
             <p className="text-red-500 text-sm">{errors.ingredients}</p>
@@ -63,7 +63,7 @@ function AddRecipeForm() {
           <textarea
             value={steps}
             onChange={(e) => setSteps(e.target.value)}
-            className="w-full border rounded p-2 mt-1"
+            className="w-full border rounded p-2 mt-1 md:p-3"
           ></textarea>
           {errors.steps && (
             <p className="text-red-500 text-sm">{errors.steps}</p>
@@ -72,7 +72,7 @@ function AddRecipeForm() {
 
         <button
           type="submit"
-          className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600"
+          className="bg-blue-500 text-white px-4 py-2 md:px-6 md:py-3 rounded hover:bg-blue-600"
         >
           Submit Recipe
         </button>
