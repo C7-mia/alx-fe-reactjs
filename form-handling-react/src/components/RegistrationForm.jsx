@@ -9,6 +9,8 @@ export default function RegistrationForm() {
 
   const [error, setError] = useState("");
 
+  const { username, email, password } = formData;
+
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
@@ -17,15 +19,13 @@ export default function RegistrationForm() {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    // Basic validation
-    if (!formData.username || !formData.email || !formData.password) {
+    if (!username || !email || !password) {
       setError("All fields are required");
       return;
     }
 
     setError("");
 
-    // Simulate API request (mock endpoint)
     try {
       const response = await fetch("https://jsonplaceholder.typicode.com/users", {
         method: "POST",
@@ -50,7 +50,7 @@ export default function RegistrationForm() {
           type="text"
           name="username"
           placeholder="Username"
-          value={formData.username}
+          value={username}
           onChange={handleChange}
           className="w-full p-2 border rounded"
         />
@@ -58,7 +58,7 @@ export default function RegistrationForm() {
           type="email"
           name="email"
           placeholder="Email"
-          value={formData.email}
+          value={email}
           onChange={handleChange}
           className="w-full p-2 border rounded"
         />
@@ -66,7 +66,7 @@ export default function RegistrationForm() {
           type="password"
           name="password"
           placeholder="Password"
-          value={formData.password}
+          value={password}
           onChange={handleChange}
           className="w-full p-2 border rounded"
         />
