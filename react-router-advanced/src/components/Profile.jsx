@@ -1,13 +1,13 @@
 import React from 'react';
 import { Routes, Route } from 'react-router-dom';
-import UserProfile from './UserProfile';
-import Settings from './Settings';
+import ProfileDetails from './ProfileDetails';
+import ProfileSettings from './ProfileSettings';
 
 const Profile = () => {
   return (
     <Routes>
-      <Route path="user" element={<UserProfile />} />
-      <Route path="settings" element={<Settings />} />
+      <Route path="details" element={<ProfileDetails />} />
+      <Route path="settings" element={<ProfileSettings />} />
     </Routes>
   );
 };
