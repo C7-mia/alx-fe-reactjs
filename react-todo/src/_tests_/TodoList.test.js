@@ -17,7 +17,6 @@ describe('TodoList Component', () => {
     const input = screen.getByPlaceholderText('Add new todo')
     const addButton = screen.getByText('Add')
 
-    // Simulate user input and submit
     fireEvent.change(input, { target: { value: 'New Task' } })
     fireEvent.click(addButton)
 
@@ -27,11 +26,9 @@ describe('TodoList Component', () => {
   test('toggles a todo completion', () => {
     const todoItem = screen.getByText('Learn React')
 
-    // Click to toggle
     fireEvent.click(todoItem)
     expect(todoItem).toHaveStyle('text-decoration: line-through')
 
-    // Click again to untoggle
     fireEvent.click(todoItem)
     expect(todoItem).toHaveStyle('text-decoration: none')
   })
