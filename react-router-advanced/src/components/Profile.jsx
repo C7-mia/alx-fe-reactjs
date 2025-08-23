@@ -1,11 +1,15 @@
-import { Outlet } from 'react-router-dom';
+import React from 'react';
+import { Routes, Route } from 'react-router-dom';
+import UserProfile from './UserProfile';
+import Settings from './Settings';
 
-export default function Profile() {
+const Profile = () => {
   return (
-    <div>
-      <h1>Profile</h1>
-      {/* Other profile content */}
-      <Outlet /> {/* Renders ProfileDetails or ProfileSettings based on route */}
-    </div>
+    <Routes>
+      <Route path="user" element={<UserProfile />} />
+      <Route path="settings" element={<Settings />} />
+    </Routes>
   );
-      }
+};
+
+export default Profile;
