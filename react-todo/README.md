@@ -124,7 +124,7 @@ Ensure it is removed from the DOM.
 
 🔹 Installation
 
-git clone https://github.com/your-username/alx-fe-reactjs.git
+git clone https://github.com/C7-mia/alx-fe-reactjs.git
 cd alx-fe-reactjs/react-todo
 npm install
 
