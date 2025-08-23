@@ -4,8 +4,6 @@ import PostItem from './PostItem.jsx'
 async function fetchPosts() {
   const res = await fetch('https://jsonplaceholder.typicode.com/posts')
   if (!res.ok) throw new Error('Failed to fetch posts')
-  // Simulate latency for demo:
-  // await new Promise((r) => setTimeout(r, 600))
   return res.json()
 }
 
@@ -17,14 +15,15 @@ export default function PostsComponent() {
     error,
     isError,
     isLoading,
-    isFetching, // true during background refetch
+    isFetching,
     refetch,
   } = useQuery({
     queryKey: ['posts'],
     queryFn: fetchPosts,
-    // Demonstrate manual control as needed:
-    // refetchOnMount: true,
-    // refetchOnWindowFocus: false,
+    staleTime: 60 * 1000,       // data is fresh for 1 minute
+    cacheTime: 5 * 60 * 1000,   // keep unused cache for 5 minutes
+    keepPreviousData: true,     // show old data while fetching new
+    refetchOnWindowFocus: true, // auto refetch when tab is focused
   })
 
   if (isLoading) return <p>Loading posts…</p>
@@ -37,21 +36,20 @@ export default function PostsComponent() {
 
         <button
           onClick={() => {
-            // Mark cache as stale and trigger background refresh on next mount/focus
             queryClient.invalidateQueries({ queryKey: ['posts'] })
           }}
         >
-        Invalidate Cache (background on next trigger)
+          Invalidate Cache (background on next trigger)
         </button>
 
         {isFetching ? <span>Updating…</span> : null}
       </div>
 
       <ul style={{ display: 'grid', gap: 8, padding: 0, listStyle: 'none' }}>
-        {posts.slice(0, 20).map((p) => (
+        {posts?.slice(0, 20).map((p) => (
           <PostItem key={p.id} post={p} />
         ))}
       </ul>
     </div>
   )
-               }
+    }
